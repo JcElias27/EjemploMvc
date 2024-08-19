@@ -1,0 +1,99 @@
+PatronFrontController.txt
+
+La capa de presentación, controlador único, centraliza el acceso de todas 
+las peticiones provenientes del cliente, es el punto inicial de contacto 
+para manejarlas hacia el recurso.
+
+Este punto de contacto inicial, tiene la responsabilidad de:
+
+1) vincular la gestión de peticiones en la recuperación de contenidos,
+recuperación de componentes de petición, por ejemplo: 
+
+		/payload/acción/argumento/ 
+		/controlador/metodo/argumento 
+
+2) conducir la navegación y controlar la renderización de la capa 
+de presentación.
+
+Esta capa en su codificación con un lenguaje de programación interpretado, para 
+implementar 1) comprende:
+
+a) la invocación de servicios de seguridad como: validación, autentificación y
+autorización de contenidos.
+b) la delegación de procesamiento lógico, 
+c) el manejo de errores, 
+y para 
+
+2) se codifican en archivos y con un lenguaje de marcado y etiquetas para estructurar el 
+contenido y manejo de atributos gráficos para atender la presentación de: 
+d) la renderización de la capa de presentación.
+  
+El controlodador único, FrontController tiene la responsabilidad de 
+1) y coordinarse con el componente Aplication_Controller para 2).
+
+Se entiende por capa de presentación, como la componente responsable de renderizar la vista
+en la interfaz usuario-máquina en un navegador web, esta capa se estructura en dos partes:
+1de2 sub capa de manejadores codificada en un lenguaje de programación interpretado
+y 2de2 una colección combinada de elementos con una jerarquía estructurada de etiquetas de hipertexto 
+con atributos y propiedades en combinacion con elementos de lenguaje de marcado que determina 
+el aspecto de visualización de contenidos de un sitio web y elementos de lenguaje interpretado que aporta 
+a los anteriores elementos un nivel de interacción. 
+ 
+El componente Aplication_Controller es el encargado de manejar la accion y la renderización de la capa de vista.
+
+Cómo se integra un patron de diseño MVC, en la aplicación web EjemploMVC según [1].
+
+	Se listan las carpetas y archivos:
+	
+	Se levanta un servidor local. Por ejemplo Apache2, en Xampp Control Panel v3.3.0
+	
+	Desde la barra de direcciones de un navegador web se teclea
+	
+	Opción
+	I			http://localhost/EjemploMvc/
+				http://localhost/EjemploMvc/index.php/
+	
+	II          http://localhost/EjemploMvc/index.php/ver/2
+	
+	index.php : Contiene la codificación en un lenguaje interpretado con php. 
+				index.php es el punto de contacto, es decir,
+				tiene la responsabilidad de:
+				1) vincular la gestión de peticiones en la recuperación de contenidos
+				-payload, acción-argumento-.
+
+				En caso particular, del index.php se tiene que:
+					la sentencia filtra y remueve los espacios en blanco la 
+					petición del cliente y la recupera en $ruta
+				
+						$ruta = str_replace($home, "", $_SERVER["REQUEST_URI"]); // remueve espacios en blanco
+					
+					Serializa y asigna $array_ruta la carpeta contenedora y el contenido del payload 
+					
+						$array_ruta = array_filter(explode("/", $ruta));					
+
+				
+				
+
+
+
+
+
+
+Glosario.
+explode()
+Divide un string en varios string.
+Devuelve un array de string, siendo cada uno un substring del parámetro 
+string formado por la división realizada por los delimitadores indicados en el parámetro string separator.
+
+
+Referencias:
+
+explode. Php
+Disponible en:https://www.php.net/manual/es/function.explode.php
+Consultado:08abril24.
+
+
+[1] García Rincón Jairo. 
+PROGRAMACIÓN ORIENTADA A OBJETOS EN PHP. Patrón MVC. 
+Disponible en:https://www.jairogarciarincon.com/clase/programacion-orientada-a-objetos-en-php/la-carpeta-public
+Consultado:08abril24.

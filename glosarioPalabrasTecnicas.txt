@@ -1,0 +1,18 @@
+glosarioPalabrasTecnicas.txt
+
+Actividad:
+1de2 Elaborar un glosario de palabras
+8 técnicas, cuya definición conteste 
+	a)Qué es b)Para qué c)Cuáles 
+
+2de2 Elaborar un resumen a partir 
+del glosario.
+
+1de8 protocolo http
+2de8 servidor web
+3de8 componentes de petición URL
+4de8 controlador principal
+5de8 frontController
+6de8 renderizar vista
+7de8 modelo de capas: modelo, vista,controlador    
+8de8 atributos de un objeto.
