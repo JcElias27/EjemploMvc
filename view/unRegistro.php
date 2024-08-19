@@ -1,6 +1,6 @@
 <style>
 body{
-    background-color: #fbede1;
+    background-color: #fbfbe1;
     }
 th {
     width: 8rem;
@@ -11,6 +11,8 @@ th {
 }
 
 td {
+    background-color: #e1fbe9;
+    border-style:ridge;
     width: 8rem;
 }
 </style>
